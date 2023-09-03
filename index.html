@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Meal Finder App</title>
+        <!-- adding image before the title -->
+        <link rel="icon" type="image/x-icon" href="images/fevicon.png">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- font awesome cdn links -->
+        <link  rel="stylesheet"href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"
+    />
+        <script src="https://kit.fontawesome.com/7eb1bde4bc.js" crossorigin="anonymous"></script>
+
+        <!-- custom css file link -->
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/e6f12e5790.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <!-- header section starts here... -->
+        <header>
+            <a href="#" class="logo"><i class="fas fa-utensils"></i>Feasto...😋</a>
+            <!-- adding heart symbol to make a fovarite list -->
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div id="fav-light-box">
+                 <span>
+                    <a href="#">Close</a>
+                 </span>
+                 <ul class="fav-container">
+
+                 </ul>
+            </div>
+        </header>   
+        <!-- header section ends here -->
+        <!-- craeting the necessary class to build the home page -->
+        <!-- main content will start from here -->
+        <main>
+            <div class="container">
+                <div class="meal-wrapper">
+                    <div class="meal-search">
+                        <h2 class="title">Find Meals for your ingredients😊</h2>
+                        <blockquote>Real food doesn't have ingredients, real food is ingredients.<br>
+                        <cite>- Jaime Oliver</cite>
+                        </blockquote>
+                        <div class="meal-search-box">
+                            <input type="text" class="search-control" placeholder="Search for recipes..." id="search-input">
+                            <button type="submit" class="search-btn btn" id="search-btn">
+                            <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="meal-result">
+                        <h2 class="title">Your Search Results....</h2>
+                        <div id="meal">
+                            <!-- meal items -->
+                            <!-- <div class="meal-item">
+                                <div class="meal=img">
+                                    <img src="food.png" alt="food-image">
+                                </div>
+                                <div class="meal-name">
+                                    <h3>Potato Chips</h3>
+                                    <a href="#" class="recipe-btn">Get Recipe</a>
+                                    <i class="fas fa-heart" id="fav-add-btn">ADD</i>
+                                </div>
+                            </div> -->
+                            <!-- end of meal item -->
+                        </div>
+                    </div>
+                    <!-- getting recipe details -->
+                    <div class="meal-details">
+                        <!-- recipe close button -->
+                        <button type="button" class="btn recipe-close-btn" id="recipe-cls-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+
+                        <!-- meal content -->
+                        <div class="meal-details-content">
+                            <!-- <h2 class="recipe-title">Meals Name Here</h2>
+                            <p class="recipe-category">Category Name</p>
+                            <div class="recipe-instruct">
+                                <h3>Instructions:</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quibusdam, porro praesentium eaque laborum rem voluptatem facilis odit aspernatur ex earum unde similique. Sapiente, modi veritatis ex velit autem tempora?</p>
+                            </div>
+                            <div class="recipe-meal-img">
+                                <img src="food.png" alt="food">
+                            </div>
+                            <div class="recipe-link">
+                                <a href="#" target="_blank">watch Video</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <script src="script.js" async defer></script>
+    </body>
+</html>

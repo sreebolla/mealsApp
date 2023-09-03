@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --green:#27ae60;
+    --black:#192a56;
+    --light-color:#666;
+    --orange:#d65108;
+    --dark-color:#b54507;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+/* applies style for all the elements */
+*{
+    font-family: 'Poppins', sans-serif;
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    /* border: none; */
+    
+    transition: all .2s linear;
+}
+/* styling html  */
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+/* adding appropriate styles to my header section */
+header{
+    position: fixed;
+    top:0; left:0; right:0;
+    background: #fff;
+    padding: 1rem 7%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+    text-transform: capitalize;
+}
+/* styling the logo */
+header .logo{
+    color: var(--black);
+    font-size: 2.5rem;
+    font-weight: bolder;
+
+}
+header .logo i{
+    color: var(--green);
+    padding-right: 7px;
+}
+/* Styling the navbar   */
+header .navbar a{
+    font-size: 1.7rem;
+    border-radius: .8rem;
+    padding: 8px;
+    color: var(--light-color);
+}
+/* here as we have only one navigation element we are making it defaultly active */
+header .navbar a.active{
+    color: #fff;
+    background: var(--green);
+}
+/* styling the favourite icon accordingly */
+header .icons i,
+header .icons a{
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width:4.5rem;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--black);
+    border-radius: 50%;
+    background: #eee;
+}
+/* one hovering on the icon it rotates to 360deg and changes the color */
+header .icons i,
+header .icons a:hover{
+    color: #fff;
+    background: var(--green);
+    transform: rotate(360deg);
+}
+/* creating lightbox so that as soon as we click on add it will be added to favorite lists */
+#fav-light-box{
+    width:40%;
+    height:100%;
+    background-color: rgba(0,0,0,0.8);
+    position:fixed;
+    top:0%;
+    right:0%;
+    z-index: 1000;
+    display:none;
+}
+#fav-light-box.active{
+    width:40%;
+    height:100%;
+    background-color: #ffffffc0;
+    position:fixed;
+    top:0%;
+    right:0%;
+    z-index: 1000;
+    display:block;
+}
+#fav-light-box >span a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--orange);
+    margin:1rem;
+}
+#fav-light-box ul{
+    padding:1rem;
+}
+#fav-light-box ul li{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin:1rem auto;
+    cursor: pointer;
+    color:var(--orange);
+    transition: all 0.8s ease-in-out;
+    cursor: pointer;
+}
+#fav-light-box ul li img{
+    height: 8rem;
+    width: 8rem;
+}
+/* the meal searching container */
+.container{
+    margin-top: 75px;
+    min-height: 100vh;
+}
+/* styling the all the elements which are present inside the container .. */
+/* styling the search button */
+.btn{
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.05rem;
+}
+/* styling the input type text field */
+.text{
+    opacity:0.8;
+}
+/* adding styles to title class which is representing our headings */
+.title{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+/*  */
+.meal-wrapper{
+    max-width: 1280px;
+    margin:0 auto;
+    padding:2rem;
+    background: #fff;
+    text-align: center;
+}
+.meal-search{
+    margin:2rem 0;
+}
+.meal-search cite{
+    font-size: 1rem;
+}
+.meal-search-box{
+    margin: 1.2rem 0;
+    display: flex;
+    align-items: stretch;
+}
+.search-control,
+.search-btn
+{
+    width:100%;
+}
+/* styling to the search controlas */
+.search-control{
+    padding:0 1rem;
+    font-size:1.1rem;
+    font-family: inherit;
+    outline: 0 ;
+    border:1px solid var(--orange);
+    color: var(--orange);
+    border-top-left-radius: 2.5rem;
+    border-bottom-left-radius: 2.5rem;
+}
+.search-btn{
+    width: 50px;
+    height:50px;
+    font-size:1.8rem;
+    background: var(--orange);
+    color: #fff;
+    border:none;
+    border-top-right-radius: 2.5rem;
+    border-bottom-right-radius: 2.5rem;
+    transition:all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition:all 0.4s linear;
+    -o-transition: all 0.4s linear;
+}
+.search-btn:hover{
+    background: var(--dark-color);
+}
+.meal-result{
+    margin-top:4rem;
+}
+#meal{
+    margin:2.4rem 0;
+    
+}
+.meal-item{
+    border-radius: 1rem;
+    /* -webkit-border-radius:1rem;
+    -moz-border-radius:1rem;
+    -ms-border-radius:1rem;
+    -o-border-radius:1rem; */
+    overflow: hidden;
+    box-shadow: 0 4px 21px -12px rgba(0,0,0,.79);
+}
+.meal-img img{
+    /* width:100%; */
+    display: block;
+    
+}
+.meal-name{
+    padding: 1.5rem 0.5rem;
+}
+.meal-name h3{
+    font-size: 1.4rem;
+}
+.recipe-btn{
+    text-decoration: none;
+    color:#fff;
+    background: var(--orange);
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding:0.75rem 0;
+    display:block;
+    width:170px;
+    margin:1rem auto;
+    border-radius: 2rem;
+    transition:all 0.4s linear;
+}
+.recipe-btn:hover{
+    background: var(--dark-color);
+}
+/* meal details */
+.meal-details{
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color:#fff;
+    background: var(--orange);
+    border-radius: 1rem;
+    width:85%;
+    height:85%;
+    overflow-y: scroll;
+    display: none;
+    padding:2rem 0;
+    margin-top: 40px;
+}
+.meal-details::-webkit-scrollbar{
+    width:10px;
+}
+.meal-details::-webkit-scrollbar-thumb{
+    background: #f0f0f0;
+    border-radius: 2rem;
+}
+
+/* js related */
+.showRecipe{
+    display: block;
+}
+
+.meal-details-content{
+    margin:2rem;
+}
+.meal-details-content p:not(.recipe-category){
+    padding: 1rem 0;
+}
+.recipe-close-btn{
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 1.8rem;
+    background: #fff;
+    border:none;
+    width:35px;
+    height:35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}
+.recipe-title{
+    letter-spacing: 1px;
+    padding: 1rem;
+}
+.recipe-category{
+    background: #fff;
+    font-weight: 600;
+    color: var(--orange);
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+}
+.recipe-instruct{
+    padding:1rem 0;
+}
+.recipe-meal-img img{
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+    margin:0 auto;
+    display: block;
+}
+.recipe-link{
+    margin:1.4rem 0;
+}
+.recipe-link a{
+    color: #fff;
+    font-size: 1.2 rem;
+    font-weight: 700;
+    transition: all 0.4s linear;
+   
+}
+.recipe-link a:hover{
+    opacity: 0.7;
+}
+
+/* styling the no results find */
+.notFound{
+    grid-template-columns: 1fr!important;
+    color: var(--orange);
+    font-size: 1.8rem;
+    font-weight: 600;
+    width: 100%;
+}
+
+/* Media queries */
+@media screen and (min-width:600px){
+    .meal-search-box{
+        width:540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media screen and (min-width:768px) {
+    #meal{
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:2rem;
+        /* display: flex;
+        flex-wrap: wrap;
+        gap:2rem */
+    }
+    .meal-item{
+        margin:0;
+    }
+    .meal-details{
+        width:700px;
+    }
+}
+@media screen and (min-width:992px){
+    #meal{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
